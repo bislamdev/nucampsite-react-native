@@ -1,18 +1,13 @@
-import React, { Component } from 'react';
-import { ScrollView } from 'react-native'
+import React, { Component } from "react";
+import { Text, ScrollView } from "react-native";
 
 class About extends Component {
-
     static navigationOptions = {
-        title: 'About'
-    }
+        title: "About",
+    };
 
     render() {
-        return (
-            <ScrollView>
-
-            </ScrollView>
-        );
+        return <ScrollView></ScrollView>;
     }
 }
 export default About;

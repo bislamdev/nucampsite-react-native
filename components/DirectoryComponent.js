@@ -1,20 +1,19 @@
-import React, { Component } from 'react';
-import { FlatList } from 'react-native';
-import { ListItem } from 'react-native-elements';
-import { CAMPSITES } from '../shared/campsites';
+import React, { Component } from "react";
+import { FlatList } from "react-native";
+import { ListItem } from "react-native-elements";
+import { CAMPSITES } from "../shared/campsites";
 
 class Directory extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
-            campsites: CAMPSITES
+            campsites: CAMPSITES,
         };
     }
 
     static navigationOptions = {
-        title: 'Directory'
-    }
+        title: "Directory",
+    };
 
     render() {
         const { navigate } = this.props.navigation;
@@ -23,8 +22,8 @@ class Directory extends Component {
                 <ListItem
                     title={item.name}
                     subtitle={item.description}
-                    onPress={() => navigate('CampsiteInfo', { campsiteId: item.id })}
-                    leftAvatar={{ source: require('./images/react-lake.jpg') }}
+                    onPress={() => navigate("CampsiteInfo", { campsiteId: item.id })}
+                    leftAvatar={{ source: require("./images/react-lake.jpg") }}
                 />
             );
         };
@@ -33,7 +32,7 @@ class Directory extends Component {
             <FlatList
                 data={this.state.campsites}
                 renderItem={renderDirectoryItem}
-                keyExtractor={item => item.id.toString()}
+                keyExtractor={(item) => item.id.toString()}
             />
         );
     }
