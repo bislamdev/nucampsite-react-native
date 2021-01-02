@@ -6,7 +6,7 @@ import { ListItem, Card } from "react-native-elements";
 function Mission() {
   return (
     <Card title="Our Mission">
-      <Text>
+      <Text style={{ marginBottom: 10 }}>
         We present a curated database of the best campsites in the vast woods
         and backcountry of the World Wide Web Wilderness. We increase access to
         adventure for the public while promoting safe and respectful use of
@@ -38,11 +38,13 @@ class About extends Component {
     return (
       <ScrollView>
         <Mission />
-        <FlatList
-          data={this.state.partners}
-          renderItem={renderPartner}
-          keyExtractor={(item) => item.id.toString()}
-        />
+        <Card title="Community Partners">
+          <FlatList
+            data={this.state.partners}
+            renderItem={renderPartner}
+            keyExtractor={(item) => item.id.toString()}
+          />
+        </Card>
       </ScrollView>
     );
   }
