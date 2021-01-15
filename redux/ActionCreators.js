@@ -161,10 +161,6 @@ export const postFavorite = (campsiteId) => (dispatch) => {
   }, 2000);
 };
 
-export const addFavorite = (campsiteId) => ({
-  type: ActionTypes.ADD_FAVORITE,
-  payload: campsiteId,
-});
 export const postComment = (campsiteId, rating, author, text) => (dispatch) => {
   const newComment = {
     campsiteId: campsiteId,
@@ -178,8 +174,17 @@ export const postComment = (campsiteId, rating, author, text) => (dispatch) => {
     dispatch(addComment(newComment));
   }, 2000);
 };
-
 export const addComment = (newComment) => ({
   type: ActionTypes.ADD_COMMENT,
   payload: newComment,
+});
+
+export const addFavorite = (campsiteId) => ({
+  type: ActionTypes.ADD_FAVORITE,
+  payload: campsiteId,
+});
+
+export const deleteFavorite = (campsiteId) => ({
+  type: ActionTypes.DELETE_FAVORITE,
+  payload: campsiteId,
 });
